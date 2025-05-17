@@ -1,0 +1,43 @@
+[
+    {
+        "path": "/blog/post-1/preview",
+        "format": "webp",
+        "name": "post",
+        "sizes": {
+            "xs": [300, 100],
+            "sm": [300, 100],
+            "md": [300, 100],
+            "lg": [400, 300],
+            "xl": [300, 100],
+            "xxl": [300, 100]
+        }
+    },
+
+    {
+        "path": "/blog/post-2/preview",
+        "format": "webp",
+        "name": "post",
+        "sizes": {
+            "xs": [300, 100],
+            "sm": [300, 100],
+            "md": [300, 100],
+            "lg": [300, 100],
+            "xl": [300, 100],
+            "xxl": [300, 100]
+        }
+    },
+
+    {
+        "path": "/blog/post-3/preview",
+        "format": "webp",
+        "name": "post",
+        "sizes": {
+            "xs": [300, 100],
+            "sm": [300, 100],
+            "md": [300, 100],
+            "lg": [300, 100],
+            "xl": [300, 100],
+            "xxl": [300, 100]
+        }
+    }
+]

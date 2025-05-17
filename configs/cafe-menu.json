@@ -1,0 +1,43 @@
+[
+    {
+        "path": "/cafe-menu/chicken-burger/preview",
+        "format": "webp",
+        "name": "menu",
+        "sizes": {
+            "xs": [300, 100],
+            "sm": [300, 100],
+            "md": [300, 100],
+            "lg": [300, 100],
+            "xl": [300, 100],
+            "xxl": [300, 100]
+        }
+    },
+
+    {
+        "path": "/cafe-menu/choco-cup-cake/preview",
+        "format": "webp",
+        "name": "menu",
+        "sizes": {
+            "xs": [300, 100],
+            "sm": [300, 100],
+            "md": [300, 100],
+            "lg": [300, 100],
+            "xl": [300, 100],
+            "xxl": [300, 100]
+        }
+    },
+
+    {
+        "path": "/cafe-menu/coffee/preview",
+        "format": "webp",
+        "name": "menu",
+        "sizes": {
+            "xs": [300, 100],
+            "sm": [300, 100],
+            "md": [300, 100],
+            "lg": [300, 100],
+            "xl": [300, 100],
+            "xxl": [300, 100]
+        }
+    }
+]
