@@ -48,16 +48,22 @@ def build_images(source: str, images: str, config: Dict[str, Any]) -> None:
 
     for breakpoint, image_size in sizes.items():
         width = image_size[0]
-        height = image_size[1]
-        size = (width, height)
+        # height = image_size[1]
+        # size = (width, height)
 
         image_name = name + "-" + breakpoint + "." + image_file_extension
         path = path_to_images / image_name
 
         try:
             with Image.open(path_to_source) as image:
-                image.thumbnail(size)
-                image.save(path, format=pillow_to_save_format, quality=100)
+                w, h = image.size
+                aspect_ratio = h / w
+
+                target_height = int(width * aspect_ratio)
+                resized = image.resize((width, target_height), Image.LANCZOS)
+
+                # image.thumbnail(size, Image.LANCZOS)
+                resized.save(path, format=pillow_to_save_format, quality=25)
 
         except Exception as e:
             print(f"Error: {e}")
