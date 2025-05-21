@@ -63,7 +63,7 @@ def build_images(source: str, images: str, config: Dict[str, Any]) -> None:
                 resized = image.resize((width, target_height), Image.LANCZOS)
 
                 # image.thumbnail(size, Image.LANCZOS)
-                resized.save(path, format=pillow_to_save_format, quality=25)
+                resized.save(path, format=pillow_to_save_format, quality=15)
 
         except Exception as e:
             print(f"Error: {e}")
