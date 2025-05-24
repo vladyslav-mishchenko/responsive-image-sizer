@@ -6,6 +6,7 @@ Convenient to use with picture html tag
 """
 
 import os
+import shutil
 import glob
 import json
 from PIL import Image
@@ -15,80 +16,52 @@ from typing import List, Dict, Any
 
 SOURCES = "sources"
 IMAGES = "images"
-CONFIGS = "./configs/*.json"
+CONFIGS = "./configs/**/*.json"
 
 
-def build_images(source: str, images: str, config: Dict[str, Any]) -> None:
-    """
-    Read breakpoints configuration
-    Create image with width and height
-    Save image to destination directory
+def build_images(config: Dict[str, Any]) -> None:
 
-    Args:
-        source (str): source image path
-        images (str): destination image path
-        config (Dict[str, Any]): image configuration
-    """
+    images_path = IMAGES + config["images-path"]
 
-    path_to_source = os.path.join(source, os.listdir(source)[0])
-    path_to_images = Path(images)
+    # read breakpoints
+    for k, v in config["breakpoints"].items():
+        format = "webp"
+        image_extention = "webp"
 
-    sizes = config["sizes"]
-    name = config["name"]
-    format = config["format"]
+        if k == "default":
+            format = "JPEG"
+            image_extention = "jpg"
 
-    formates = {
-        "webp": {"file_extension": "webp", "pillow_format": "WebP"},
-        # "heif": {"file_extension": "heif", "pillow_format": "HEIF"},
-        # "avif": {"file_extension": "avif", "pillow_format": "AVIF"},
-    }
+        name = config["name"] + "-" + k + "." + image_extention
+        image = Path(images_path) / name
 
-    image_file_extension = formates[format]["file_extension"]
-    pillow_to_save_format = formates[format]["pillow_format"]
-
-    for breakpoint, image_size in sizes.items():
-        width = image_size[0]
-        # height = image_size[1]
-        # size = (width, height)
-
-        image_name = name + "-" + breakpoint + "." + image_file_extension
-        path = path_to_images / image_name
+        width = v["width"]
+        source = SOURCES + v["source"]
+        quality = int(v["quality"])
 
         try:
-            with Image.open(path_to_source) as image:
-                w, h = image.size
+            with Image.open(source) as image_source:
+                w, h = image_source.size
                 aspect_ratio = h / w
 
-                target_height = int(width * aspect_ratio)
-                resized = image.resize((width, target_height), Image.LANCZOS)
+                height = int(width * aspect_ratio)
+                resized = image_source.resize((width, height), Image.LANCZOS)
 
-                # image.thumbnail(size, Image.LANCZOS)
-                resized.save(path, format=pillow_to_save_format, quality=15)
+                resized.save(image, format=format, quality=quality)
 
         except Exception as e:
-            print(f"Error: {e}")
+            print(f"{e}")
 
 
-def read_image_configs(configs: List[Dict[str, Any]]) -> None:
-    """
-    Read image configs
-    Create directories for images id do not exist
-    Execure build images function
+def create_image_directory(path: str) -> None:
+    os.makedirs(path)
 
-    Args:
-        configs (List[Dict[str, Any]]): list with image config
-    """
 
-    for config in configs:
-        path_to_images = IMAGES + config["path"]
-        path_to_sources = SOURCES + config["path"]
+def read_image_config(config: Dict[str, Any]) -> None:
+    path_to_images = IMAGES + config["images-path"]
+    create_image_directory(path_to_images)
 
-        if os.path.exists(path_to_images):
-            build_images(path_to_sources, path_to_images, config)
-
-        else:
-            os.makedirs(path_to_images, exist_ok=True)
-            build_images(path_to_sources, path_to_images, config)
+    build_images(config)
 
 
 def read_config_files(files: List[str]) -> None:
@@ -96,7 +69,7 @@ def read_config_files(files: List[str]) -> None:
     Read list with paths
     Open files by path
     Extract json from files
-    Run function that read json config
+    Run function that read image json config
 
     Args:
         files (List[str]): list with config files path strings
@@ -105,8 +78,8 @@ def read_config_files(files: List[str]) -> None:
     for file in files:
         try:
             with open(file, "r") as configs_file:
-                image_json_configs = json.load(configs_file)
-                read_image_configs(image_json_configs)
+                image_json_config = json.load(configs_file)
+                read_image_config(image_json_config)
 
         except Exception as e:
             print(f"Error: {e}")
@@ -123,10 +96,22 @@ def config_files_list(path: str) -> List[str]:
         List[str]: paths list
     """
 
-    return glob.glob(path)
+    return glob.glob(path, recursive=True)
+
+
+def clear_images_directory() -> None:
+    for _ in os.listdir(IMAGES):
+        path_to_item = os.path.join(IMAGES, _)
+
+        if os.path.isfile(path_to_item):
+            os.remove(path_to_item)
+
+        if os.path.isdir(path_to_item):
+            shutil.rmtree(path_to_item)
 
 
 def main():
+    clear_images_directory()
     read_config_files(config_files_list(CONFIGS))
 
 
