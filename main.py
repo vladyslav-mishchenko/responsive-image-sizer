@@ -50,14 +50,20 @@ def build_images(config: Dict[str, Any]) -> None:
                 resized = image_source.resize((width, height), Image.LANCZOS)
 
                 resized.save(image, format=format, quality=quality)
+                
+                if os.path.exists(image):
+                    print(f"image: {image} -> created")
 
         except Exception as e:
             print(f"{e}")
 
 
 def create_image_directory(path: str) -> None:
-    print(path)
     os.makedirs(path)
+    
+    if os.path.exists(path):
+        print("----------------------------------------------------------------------")
+        print(f"directory: {path} -> created")
 
 
 def read_image_config(config: Dict[str, Any]) -> None:
