@@ -27,13 +27,15 @@ def build_images(config: Dict[str, Any]) -> None:
     for k, v in config["breakpoints"].items():
         format = "webp"
         image_extention = "webp"
+        # format = "AVIF"
+        # image_extention = "avif"
 
         if k == "default":
             format = "JPEG"
             image_extention = "jpg"
 
-        name = config["name"] + "-" + k + "." + image_extention
-        image = Path(images_path) / name
+        image_name = config["name"] + "-" + k + "." + image_extention
+        image = Path(images_path) / image_name
 
         width = v["width"]
         source = SOURCES + v["source"]
@@ -54,6 +56,7 @@ def build_images(config: Dict[str, Any]) -> None:
 
 
 def create_image_directory(path: str) -> None:
+    print(path)
     os.makedirs(path)
 
 
@@ -113,7 +116,7 @@ def clear_images_directory() -> None:
 def main():
     clear_images_directory()
     read_config_files(config_files_list(CONFIGS))
-
-
+    
+    
 if __name__ == "__main__":
     main()

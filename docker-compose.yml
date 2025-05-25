@@ -1,0 +1,9 @@
+services:
+    sizer:
+        stdin_open: true
+        tty: true
+        build: .
+        image: sizer:latest
+        container_name: sizer
+        volumes:
+          - .:/app
