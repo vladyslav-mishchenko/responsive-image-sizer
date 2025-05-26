@@ -20,26 +20,27 @@ CONFIGS = "./configs/**/*.json"
 
 
 def build_images(config: Dict[str, Any]) -> None:
-
+    breakpoints = config["breakpoints"]
     images_path = IMAGES + config["images-path"]
+    name = config["name"]
 
     # read breakpoints
-    for k, v in config["breakpoints"].items():
+    for breakpoint, image_config in breakpoints.items():
         format = "webp"
         image_extention = "webp"
         # format = "AVIF"
         # image_extention = "avif"
 
-        if k == "default":
+        if breakpoint == "default":
             format = "JPEG"
             image_extention = "jpg"
 
-        image_name = config["name"] + "-" + k + "." + image_extention
+        image_name = name + "-" + breakpoint + "." + image_extention
         image = Path(images_path) / image_name
 
-        width = v["width"]
-        source = SOURCES + v["source"]
-        quality = int(v["quality"])
+        width = image_config["width"]
+        source = SOURCES + image_config["source"]
+        quality = int(image_config["quality"])
 
         try:
             with Image.open(source) as image_source:
@@ -50,7 +51,7 @@ def build_images(config: Dict[str, Any]) -> None:
                 resized = image_source.resize((width, height), Image.LANCZOS)
 
                 resized.save(image, format=format, quality=quality)
-                
+
                 if os.path.exists(image):
                     print(f"image: {image} -> created")
 
@@ -60,9 +61,9 @@ def build_images(config: Dict[str, Any]) -> None:
 
 def create_image_directory(path: str) -> None:
     os.makedirs(path)
-    
+
     if os.path.exists(path):
-        print("----------------------------------------------------------------------")
+        print("--------------------------------------------------------------")
         print(f"directory: {path} -> created")
 
 
@@ -122,7 +123,7 @@ def clear_images_directory() -> None:
 def main():
     clear_images_directory()
     read_config_files(config_files_list(CONFIGS))
-    
-    
+
+
 if __name__ == "__main__":
     main()
