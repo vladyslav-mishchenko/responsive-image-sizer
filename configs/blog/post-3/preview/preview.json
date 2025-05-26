@@ -3,69 +3,69 @@
         "images-path": "/blog/post-3/preview",
         "breakpoints": {
             "default": {
-                "quality": 100,
+                "quality": 50,
                 "source": "/blog/post-3/preview/post-3.jpg",
                 "width": 768
             },
             "xs-0": {
-                "quality": "100",
+                "quality": 50,
                 "source": "/blog/post-3/preview/post-3.jpg",
                 "width": 208
             },
             "xs-320": {
-                "quality": "100",
+                "quality": 50,
                 "source": "/blog/post-3/preview/post-3.jpg",
                 "width": 288
             },
             "xs-360": {
-                "quality": "100",
+                "quality": 50,
                 "source": "/blog/post-3/preview/post-3.jpg",
                 "width": 328
             },
             "xs-375": {
-                "quality": "100",
+                "quality": 50,
                 "source": "/blog/post-3/preview/post-3.jpg",
                 "width": 343
             },
             "xs-390": {
-                "quality": "100",
+                "quality": 50,
                 "source": "/blog/post-3/preview/post-3.jpg",
                 "width": 358
             },
             "xs-410": {
-                "quality": "100",
+                "quality": 50,
                 "source": "/blog/post-3/preview/post-3.jpg",
                 "width": 378
             },
             "xs-430": {
-                "quality": "100",
+                "quality": 50,
                 "source": "/blog/post-3/preview/post-3.jpg",
                 "width": 398
             },
             "sm": {
-                "quality": "100",
+                "quality": 50,
                 "source": "/blog/post-3/preview/post-3.jpg",
                 "width": 540
             },
             "md": {
-                "quality": "100",
+                "quality": 50,
                 "source": "/blog/post-3/preview/post-3.jpg",
                 "width": 720
             },
             "lg": {
-                "quality": "100",
+                "quality": 50,
                 "source": "/blog/post-3/preview/post-3.jpg",
-                "width": 480
+                "width": 400
             },
             "xl": {
-                "quality": "100",
+                "quality": 50,
                 "source": "/blog/post-3/preview/post-3.jpg",
-                "width": 570
+                "width": 400
             },
             "xxl": {
-                "quality": "100",
+                "quality": 50,
                 "source": "/blog/post-3/preview/post-3.jpg",
-                "width": 660
+                "width": 400
             }
         }
     }

@@ -1,0 +1,71 @@
+    {
+        "name": "menu",
+        "images-path": "/menu/french-fries/preview",
+        "breakpoints": {
+            "default": {
+                "quality": 50,
+                "source": "/menu/french-fries/preview/menu.jpg",
+                "width": 768
+            },
+            "xs-0": {
+                "quality": 50,
+                "source": "/menu/french-fries/preview/menu.jpg",
+                "width": 208
+            },
+            "xs-320": {
+                "quality": 50,
+                "source": "/menu/french-fries/preview/menu.jpg",
+                "width": 288
+            },
+            "xs-360": {
+                "quality": 50,
+                "source": "/menu/french-fries/preview/menu.jpg",
+                "width": 328
+            },
+            "xs-375": {
+                "quality": 50,
+                "source": "/menu/french-fries/preview/menu.jpg",
+                "width": 343
+            },
+            "xs-390": {
+                "quality": 50,
+                "source": "/menu/french-fries/preview/menu.jpg",
+                "width": 358
+            },
+            "xs-410": {
+                "quality": 50,
+                "source": "/menu/french-fries/preview/menu.jpg",
+                "width": 378
+            },
+            "xs-430": {
+                "quality": 50,
+                "source": "/menu/french-fries/preview/menu.jpg",
+                "width": 398
+            },
+            "sm": {
+                "quality": 50,
+                "source": "/menu/french-fries/preview/menu.jpg",
+                "width": 260
+            },
+            "md": {
+                "quality": 50,
+                "source": "/menu/french-fries/preview/menu.jpg",
+                "width": 350
+            },
+            "lg": {
+                "quality": 50,
+                "source": "/menu/french-fries/preview/menu.jpg",
+                "width": 400
+            },
+            "xl": {
+                "quality": 50,
+                "source": "/menu/french-fries/preview/menu.jpg",
+                "width": 400
+            },
+            "xxl": {
+                "quality": 50,
+                "source": "/menu/french-fries/preview/menu.jpg",
+                "width": 400
+            }
+        }
+    }

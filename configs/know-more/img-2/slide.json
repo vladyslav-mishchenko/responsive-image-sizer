@@ -1,0 +1,71 @@
+    {
+        "name": "img-2",
+        "images-path": "/know-more/img-2",
+        "breakpoints": {
+            "default": {
+                "quality": 50,
+                "source": "/know-more/img-2/cafe-2.jpg",
+                "width": 768
+            },
+            "xs-0": {
+                "quality": 50,
+                "source": "/know-more/img-2/cafe-2.jpg",
+                "width": 208
+            },
+            "xs-320": {
+                "quality": 50,
+                "source": "/know-more/img-2/cafe-2.jpg",
+                "width": 288
+            },
+            "xs-360": {
+                "quality": 50,
+                "source": "/know-more/img-2/cafe-2.jpg",
+                "width": 328
+            },
+            "xs-375": {
+                "quality": 50,
+                "source": "/know-more/img-2/cafe-2.jpg",
+                "width": 343
+            },
+            "xs-390": {
+                "quality": 50,
+                "source": "/know-more/img-2/cafe-2.jpg",
+                "width": 358
+            },
+            "xs-410": {
+                "quality": 50,
+                "source": "/know-more/img-2/cafe-2.jpg",
+                "width": 378
+            },
+            "xs-430": {
+                "quality": 50,
+                "source": "/know-more/img-2/cafe-2.jpg",
+                "width": 398
+            },
+            "sm": {
+                "quality": 50,
+                "source": "/know-more/img-2/cafe-2.jpg",
+                "width": 260
+            },
+            "md": {
+                "quality": 50,
+                "source": "/know-more/img-2/cafe-2.jpg",
+                "width": 350
+            },
+            "lg": {
+                "quality": 50,
+                "source": "/know-more/img-2/cafe-2.jpg",
+                "width": 200
+            },
+            "xl": {
+                "quality": 50,
+                "source": "/know-more/img-2/cafe-2.jpg",
+                "width": 240
+            },
+            "xxl": {
+                "quality": 50,
+                "source": "/know-more/img-2/cafe-2.jpg",
+                "width": 240
+            }
+        }
+    }

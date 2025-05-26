@@ -3,67 +3,67 @@
         "images-path": "/main-banner",
         "breakpoints": {
             "default": {
-                "quality": "50",
+                "quality": 50,
                 "source": "/main-banner/banner.jpg",
                 "width": 768
             },
             "xs-0": {
-                "quality": "50",
+                "quality": 50,
                 "source": "/main-banner/banner.jpg",
                 "width": 208
             },
             "xs-320": {
-                "quality": "50",
+                "quality": 50,
                 "source": "/main-banner/banner.jpg",
                 "width": 288
             },
             "xs-360": {
-                "quality": "50",
+                "quality": 50,
                 "source": "/main-banner/banner.jpg",
                 "width": 328
             },
             "xs-375": {
-                "quality": "50",
+                "quality": 50,
                 "source": "/main-banner/banner.jpg",
                 "width": 343
             },
             "xs-390": {
-                "quality": "50",
+                "quality": 50,
                 "source": "/main-banner/banner.jpg",
                 "width": 358
             },
             "xs-410": {
-                "quality": "50",
+                "quality": 50,
                 "source": "/main-banner/banner.jpg",
                 "width": 378
             },
             "xs-430": {
-                "quality": "50",
+                "quality": 50,
                 "source": "/main-banner/banner.jpg",
                 "width": 398
             },
             "sm": {
-                "quality": "50",
+                "quality": 50,
                 "source": "/main-banner/banner.jpg",
                 "width": 540
             },
             "md": {
-                "quality": "50",
+                "quality": 50,
                 "source": "/main-banner/banner.jpg",
                 "width": 720
             },
             "lg": {
-                "quality": "50",
+                "quality": 50,
                 "source": "/main-banner/banner.jpg",
                 "width": 480
             },
             "xl": {
-                "quality": "50",
+                "quality": 50,
                 "source": "/main-banner/banner.jpg",
                 "width": 570
             },
             "xxl": {
-                "quality": "50",
+                "quality": 50,
                 "source": "/main-banner/banner.jpg",
                 "width": 660
             }

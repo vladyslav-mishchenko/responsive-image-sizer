@@ -40,7 +40,7 @@ def build_images(config: Dict[str, Any]) -> None:
 
         width = image_config["width"]
         source = SOURCES + image_config["source"]
-        quality = int(image_config["quality"])
+        quality = image_config["quality"]
 
         try:
             with Image.open(source) as image_source:
